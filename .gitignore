@@ -6,6 +6,8 @@ __pycache__/
 # C extensions
 *.so
 
+experiment_result/
+
 # Distribution / packaging
 .Python
 build/
