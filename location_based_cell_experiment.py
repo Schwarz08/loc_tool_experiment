@@ -76,7 +76,7 @@ def multi_loc_experiment(trials, rat, loc_cell_param, prefilter_col, sample_perc
 
         exp_result = loc_experiment(rat, loc_cell_param, prefilter_col, sample_percent, exp_param_db.copy(deep=True))
 
-        accuracy_column="Accuracy Round "+str(i+1)
+        accuracy_column="Accuracy Trial "+str(i+1)
         accuracy_col_list.append(accuracy_column)
         exp_param_db[accuracy_column]=exp_result["Accuracy"]
 
