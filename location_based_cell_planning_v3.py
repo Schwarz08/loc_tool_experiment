@@ -130,28 +130,7 @@ def loc_param_planning_experiment(loc_cell_param, neighbor_db, rf_db, prefilter_
     return rf_db
 
 def main():
-    rat="2G"
-    loc_cell_param="BSC Name"
-    
-    neighbor_db_file_name=f"HW_OPM_{rat}_db.csv"
-    rf_db_file_name=f"{rat}_output.xlsx"
-
-    init_search_radius=5
-    filter=10
-    threshold=75
-
-    rf_db = pd.read_excel(rf_db_file_name, sheet_name=rat)
-
-    #location param planning
-    rf_db_loc_param_planned, loc_cell_param_summary=loc_param_planning_experiment(loc_cell_param, neighbor_db_file_name, rf_db,
-                                                            init_search_radius, filter, threshold)
-
-    #export updated db loc plan
-    rf_db_loc_param_planned.to_excel(f"{rat}_rf_db_{loc_cell_param}_plan.xlsx", sheet_name=rat, index=False)
-
-    #export loc plan cell planning summary
-    with pd.ExcelWriter(f"{rat}_loc_based_cell_plan_summary.xlsx") as output:
-        loc_cell_param_summary.to_excel(output, sheet_name=loc_cell_param, index=False)
+    print("")
 
 if __name__ == "__main__":
     start = timer.time()
